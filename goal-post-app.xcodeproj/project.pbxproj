@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		76DD25EF210EBB5200682645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD25EE210EBB5200682645 /* AppDelegate.swift */; };
-		76DD25F1210EBB5200682645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD25F0210EBB5200682645 /* ViewController.swift */; };
+		76DD25F1210EBB5200682645 /* GoalsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DD25F0210EBB5200682645 /* GoalsVC.swift */; };
 		76DD25F4210EBB5200682645 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DD25F2210EBB5200682645 /* Main.storyboard */; };
 		76DD25F7210EBB5200682645 /* goal_post_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76DD25F5210EBB5200682645 /* goal_post_app.xcdatamodeld */; };
 		76DD25F9210EBB5300682645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76DD25F8210EBB5300682645 /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		76DD25EB210EBB5200682645 /* goal-post-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "goal-post-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76DD25EE210EBB5200682645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		76DD25F0210EBB5200682645 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		76DD25F0210EBB5200682645 /* GoalsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsVC.swift; sourceTree = "<group>"; };
 		76DD25F3210EBB5200682645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		76DD25F6210EBB5200682645 /* goal_post_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = goal_post_app.xcdatamodel; sourceTree = "<group>"; };
 		76DD25F8210EBB5300682645 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,8 +99,11 @@
 		76DD25ED210EBB5200682645 /* goal-post-app */ = {
 			isa = PBXGroup;
 			children = (
+				76DD2622210EBBA800682645 /* Extensions */,
+				76DD2621210EBB8300682645 /* Enums */,
+				76DD2620210EBB7B00682645 /* View */,
+				76DD261F210EBB7400682645 /* Controller */,
 				76DD25EE210EBB5200682645 /* AppDelegate.swift */,
-				76DD25F0210EBB5200682645 /* ViewController.swift */,
 				76DD25F2210EBB5200682645 /* Main.storyboard */,
 				76DD25F8210EBB5300682645 /* Assets.xcassets */,
 				76DD25FA210EBB5300682645 /* LaunchScreen.storyboard */,
@@ -126,6 +129,35 @@
 				76DD2613210EBB5300682645 /* Info.plist */,
 			);
 			path = "goal-post-appUITests";
+			sourceTree = "<group>";
+		};
+		76DD261F210EBB7400682645 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76DD25F0210EBB5200682645 /* GoalsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		76DD2620210EBB7B00682645 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76DD2621210EBB8300682645 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		76DD2622210EBBA800682645 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76DD25F7210EBB5200682645 /* goal_post_app.xcdatamodeld in Sources */,
-				76DD25F1210EBB5200682645 /* ViewController.swift in Sources */,
+				76DD25F1210EBB5200682645 /* GoalsVC.swift in Sources */,
 				76DD25EF210EBB5200682645 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
