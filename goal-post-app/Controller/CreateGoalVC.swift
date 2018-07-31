@@ -10,20 +10,26 @@ import UIKit
 
 class CreateGoalVC: UIViewController {
 
+    // MARK: Outlets
+    
     @IBOutlet weak var goalTextView: UITextView!
     @IBOutlet weak var shortTermButton: UIButton!
     @IBOutlet weak var longTermButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    // MARK: Initializers
+    
     var goalType: GoalType = .shortTerm
+    
+    // MARK: View Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.bindToKeyboard()
-        shortTermButton.setSelectedColor()
-        longTermButton.setDeselectedColor()
         goalTextView.delegate = self
+        setupView()
     }
+    
+    // MARK: Actions
     
     @IBAction func backButtonPressed(_ sender: Any) {
         dismissDetail()
@@ -48,7 +54,17 @@ class CreateGoalVC: UIViewController {
             presentingViewController?.presentSecondaryDetail(finishGoalVC)
         }
     }
+    
+    // MARK: Setups
+    
+    func setupView() {
+        nextButton.bindToKeyboard()
+        shortTermButton.setSelectedColor()
+        longTermButton.setDeselectedColor()
+    }
 }
+
+// MARK: UITextViewDelegate
 
 extension CreateGoalVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
