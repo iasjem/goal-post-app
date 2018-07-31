@@ -24,12 +24,30 @@ class GoalsVC: UIViewController {
         tableView.isHidden = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchCoreDataObjects()
     }
     
     @IBAction func addGoalButtonPressed(_ sender: Any) {
         guard let createGoalVC = storyboard?.instantiateViewController(withIdentifier: "createGoalVC") else {  return  }
         presentDetail(createGoalVC)
     }
+    
+    func fetchCoreDataObjects() {
+        self.fetch { (complete) in
+            if complete {
+                if self.goals.count >= 1 {
+                    self.tableView.isHidden = false
+                } else {
+                    self.tableView.isHidden = true
+                }
+            }
+        }
+        self.tableView.reloadData()
+    }
+}
+
 extension GoalsVC: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
