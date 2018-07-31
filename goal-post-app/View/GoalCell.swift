@@ -10,10 +10,14 @@ import UIKit
 
 class GoalCell: UITableViewCell {
 
+    // MARK: Outlets
+    
     @IBOutlet weak var goalDescriptionLabel: UILabel!
     @IBOutlet weak var goalTypeLabel: UILabel!
     @IBOutlet weak var goalProgressLabel: UILabel!
     @IBOutlet weak var completionView: UIView!
+    
+    // MARK: Helpers
     
     func configureCell(goal: Goal) {
         self.goalDescriptionLabel.text = goal.goalDescription
