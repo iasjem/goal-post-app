@@ -11,8 +11,12 @@ import CoreData
 
 class FinishGoalVC: UIViewController, UITextFieldDelegate {
     
+    // MARK: Outlets
+    
     @IBOutlet weak var createGoalButton: UIButton!
     @IBOutlet weak var pointsTextField: UITextField!
+    
+    // MARK: Initializers
     
     var goalDescription: String!
     var goalType: GoalType!
@@ -22,11 +26,21 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
         self.goalType = type
     }
     
+    // MARK: View Life Cycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        createGoalButton.bindToKeyboard()
         pointsTextField.delegate = self
+        setupView()
     }
+    
+    // MARK: Setups
+    
+    func setupView() {
+        createGoalButton.bindToKeyboard()
+    }
+    
+    // MARK: Actions
     
     @IBAction func backButtonPressed(_ sender: Any) {
         dismissDetail()
@@ -41,6 +55,8 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    // MARK: CoreData Functions
     
     func save(completion: @escaping (_ finished: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else {  return  }
